@@ -1,26 +1,37 @@
-#  Accident Prevention and Detection System
+<div align="center">
+  <h1 style="font-size: 60px; color: yellow;">Accident Prevention and Detection System</h1>
+  
+</div>
 
 <p align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&pause=1000&color=683FF7&background=E0FF0000&center=true&vCenter=true&width=700&lines=Comprehensive+Safety+Solution+for+Vehicles;Real-Time+Detection+%26+Emergency+Support" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&pause=1000&color=683FF7&background=E0FF0000&center=true&vCenter=true&width=800&lines=Comprehensive+Safety+Solution+for+Vehicles;Real-Time+Detection+%26+Emergency+Support" alt="Typing SVG" />
   </a>
 </p>
 
 <img src="https://github.com/Govindv7555/Govindv7555/blob/main/49e76e0596857673c5c80c85b84394c1.gif" width="100%" height="95px">
 
-### 📫 Team Profile
+###  Team Profile
 
 - MADUSANKA M.L.
-- ![](https://media.licdn.com/dms/image/v2/D4D03AQEGSgIKc-DBpg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1722246773796?e=1743638400&v=beta&t=99ZDDrQHlZ6dEP0Q_fEOV5o3FY0ueTVU0NJAJA6BXCs)
-  
+<div align="center">
+  <img src="https://media.licdn.com/dms/image/v2/D4D03AQEGSgIKc-DBpg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1722246773796?e=1743638400&v=beta&t=99ZDDrQHlZ6dEP0Q_fEOV5o3FY0ueTVU0NJAJA6BXCs" alt="Description" width="500" height="500">
+</div>
+
 - ANANDA M.M.H.R.
-- ![](https://media.licdn.com/dms/image/v2/D4D03AQEUL2ndM2VOlQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1701319300847?e=1743638400&v=beta&t=LTj_h5vZ29V0moQMfWq2Kgx3i73CMS2ta7NrOB1c_R0)
-  
+<div align="center">
+  <img src="https://media.licdn.com/dms/image/v2/D4D03AQEUL2ndM2VOlQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1701319300846?e=1743638400&v=beta&t=HbmyxYqwaFQ6TwpndW1jJVwc-G2oJUQs8MWrQslerAE" alt="Description" width="500" height="500">
+</div>
+
 - GAJANAYAKA P.A.G.T.M.L.
-- ![](https://media.licdn.com/dms/image/v2/D5603AQGLtY4QHcn1Lw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1721916460708?e=1743638400&v=beta&t=aUltMhEofAV9Mhmo4qghLUouBc2uK6pzBCLXcNPRFw0)
-  
+<div align="center">
+  <img src="https://media.licdn.com/dms/image/v2/D5603AQGLtY4QHcn1Lw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1721916460708?e=1743638400&v=beta&t=aUltMhEofAV9Mhmo4qghLUouBc2uK6pzBCLXcNPRFw0" alt="Description" width="500" height="500">
+</div>
+
 - JAYAWICKRAMA T.J.I.A.
-- ![](https://media.licdn.com/dms/image/v2/C4D03AQE-Idc2y6NCGw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1646676294832?e=1743638400&v=beta&t=U7PNIvnVF5dIrPkljk4xH7V44VKhp3fzNPcG2F51a2w)
+<div align="center">
+  <img src="https://media.licdn.com/dms/image/v2/C4D03AQE-Idc2y6NCGw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1646676294832?e=1743638400&v=beta&t=U7PNIvnVF5dIrPkljk4xH7V44VKhp3fzNPcG2F51a2w" alt="Description" width="500" height="500">
+</div>
 
 ## 👯 Team Members
 
@@ -49,24 +60,52 @@ A comprehensive safety solution that prevents and responds to vehicular accident
 
 ## 🛠️ Hardware Components
 
-- Microcontroller (ESP32)
-- ![](https://th.bing.com/th/id/OIP._Q-8bMffWBhEx-m9lIMm9QHaFZ?rs=1&pid=ImgDetMain)
-- Ultrasonic Sensor
-- ![](https://www.pngkit.com/png/detail/356-3562289_ultrasonic-sensor-hc-sr04-png.png)
-- Camera Module
-- ![](https://th.bing.com/th/id/OIP.iC2ePf8tR9dSYFCofBrF4AHaHa?w=184&h=184&c=7&r=0&o=5&dpr=1.3&pid=1.7)
-- Vibration Sensor
-- ![](https://th.bing.com/th/id/OIP.cPquNs3aesyNOEfoMn8USgHaEK?w=286&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7)
-- Gyroscope
-- ![](https://th.bing.com/th/id/OIP.QEUBqIdOvz5JuqmyiYFmHAHaEp?w=270&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7)
-- Buzzer
-- ![](https://th.bing.com/th/id/OIP.z36-f7TC8SXCEoENpgNVMAHaFO?w=227&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7)
-- GPS Location Tracker
-- ![](https://files.oaiusercontent.com/file-JLg2vYVNYLVWN7SESh3C7D?se=2025-01-26T15%3A39%3A38Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dbf384e66-9344-4d07-89ce-bfe71d7c799b.webp&sig=b34%2B%2B3YjZL0HnrwdQPsnNDeX%2Bu0UxMc1B52yvPtTSd0%3D)
-- Accelerometer
-- ![](https://files.oaiusercontent.com/file-48wBigM72mkStiXaNXnDnp?se=2025-01-26T15%3A41%3A50Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dabe3adf9-b314-481e-a24a-950dbb78698d.webp&sig=cG1cnqg6OB/juoRJxNlsMlW6spQDxd6HGll4HNe/KYY%3D)
-- Communication Modules (Bluetooth, WiFi)
-- ![](https://files.oaiusercontent.com/file-XL1z4jotJW7EN5iPPhpxc8?se=2025-01-26T15%3A42%3A05Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D67d0185f-2672-44b5-869e-0b7f5c0ebd5f.webp&sig=G41FVPVhXJsDYLiZt/5GFrSuDRHb3nxc9psorLWqSi4%3D)
+Microcontroller (ESP32)
+<div align="center">
+  <img src="https://th.bing.com/th/id/OIP._Q-8bMffWBhEx-m9lIMm9QHaFZ?rs=1&pid=ImgDetMain" alt="Description" width="500" height="300">
+</div>
+
+Ultrasonic Sensor
+<div align="center">
+  <img src="https://www.pngkit.com/png/detail/356-3562289_ultrasonic-sensor-hc-sr04-png.png" alt="Description" width="500" height="300">
+</div>
+
+Camera Module
+<div align="center">
+  <img src="https://th.bing.com/th/id/OIP.iC2ePf8tR9dSYFCofBrF4AHaHa?w=184&h=184&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Description" width="500" height="300">
+</div>
+
+Vibration Sensor
+<div align="center">
+  <img src="https://th.bing.com/th/id/OIP.cPquNs3aesyNOEfoMn8USgHaEK?w=286&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Description" width="500" height="300">
+</div>
+
+Gyroscope
+<div align="center">
+  <img src="https://th.bing.com/th/id/OIP.QEUBqIdOvz5JuqmyiYFmHAHaEp?w=270&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Description" width="500" height="300">
+</div>
+
+Buzzer
+<div align="center">
+  <img src="https://th.bing.com/th/id/OIP.z36-f7TC8SXCEoENpgNVMAHaFO?w=227&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Description" width="500" height="300">
+</div>
+
+GPS Location Tracker
+<div align="center">
+  <img src="https://files.oaiusercontent.com/file-JLg2vYVNYLVWN7SESh3C7D?se=2025-01-26T15%3A39%3A38Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dbf384e66-9344-4d07-89ce-bfe71d7c799b.webp&sig=b34%2B%2B3YjZL0HnrwdQPsnNDeX%2Bu0UxMc1B52yvPtTSd0%3D" alt="Description" width="500" height="300">
+</div>
+
+Accelerometer
+<div align="center">
+  <img src="https://files.oaiusercontent.com/file-48wBigM72mkStiXaNXnDnp?se=2025-01-26T15%3A41%3A50Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dabe3adf9-b314-481e-a24a-950dbb78698d.webp&sig=cG1cnqg6OB/juoRJxNlsMlW6spQDxd6HGll4HNe/KYY%3D" alt="Description" width="500" height="300">
+</div>
+
+Communication Modules (Bluetooth, WiFi)
+<div align="center">
+  <img src="https://files.oaiusercontent.com/file-XL1z4jotJW7EN5iPPhpxc8?se=2025-01-26T15%3A42%3A05Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D67d0185f-2672-44b5-869e-0b7f5c0ebd5f.webp&sig=G41FVPVhXJsDYLiZt/5GFrSuDRHb3nxc9psorLWqSi4%3D" alt="Description" width="500" height="300">
+</div>
+
+
 
 <img src="https://github.com/Govindv7555/Govindv7555/blob/main/49e76e0596857673c5c80c85b84394c1.gif" width="100%" height="95px">
 
