@@ -13,6 +13,17 @@
 
 ###  Team Profile
 
+
+- JAYAWICKRAMA T.J.I.A.
+<div align="center">
+  <img src="https://media.licdn.com/dms/image/v2/C4D03AQE-Idc2y6NCGw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1646676294832?e=1743638400&v=beta&t=U7PNIvnVF5dIrPkljk4xH7V44VKhp3fzNPcG2F51a2w" alt="Description" width="500" height="500">
+</div>
+
+- GAJANAYAKA P.A.G.T.M.L.
+<div align="center">
+  <img src="https://media.licdn.com/dms/image/v2/D5603AQGLtY4QHcn1Lw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1721916460708?e=1743638400&v=beta&t=aUltMhEofAV9Mhmo4qghLUouBc2uK6pzBCLXcNPRFw0" alt="Description" width="500" height="500">
+</div>
+
 - MADUSANKA M.L.
 <div align="center">
   <img src="https://media.licdn.com/dms/image/v2/D4D03AQEGSgIKc-DBpg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1722246773796?e=1743638400&v=beta&t=99ZDDrQHlZ6dEP0Q_fEOV5o3FY0ueTVU0NJAJA6BXCs" alt="Description" width="500" height="500">
@@ -23,15 +34,6 @@
   <img src="https://media.licdn.com/dms/image/v2/D4D03AQEUL2ndM2VOlQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1701319300846?e=1743638400&v=beta&t=HbmyxYqwaFQ6TwpndW1jJVwc-G2oJUQs8MWrQslerAE" alt="Description" width="500" height="500">
 </div>
 
-- GAJANAYAKA P.A.G.T.M.L.
-<div align="center">
-  <img src="https://media.licdn.com/dms/image/v2/D5603AQGLtY4QHcn1Lw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1721916460708?e=1743638400&v=beta&t=aUltMhEofAV9Mhmo4qghLUouBc2uK6pzBCLXcNPRFw0" alt="Description" width="500" height="500">
-</div>
-
-- JAYAWICKRAMA T.J.I.A.
-<div align="center">
-  <img src="https://media.licdn.com/dms/image/v2/C4D03AQE-Idc2y6NCGw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1646676294832?e=1743638400&v=beta&t=U7PNIvnVF5dIrPkljk4xH7V44VKhp3fzNPcG2F51a2w" alt="Description" width="500" height="500">
-</div>
 
 ## 👯 Team Members
 
