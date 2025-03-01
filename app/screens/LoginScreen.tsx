@@ -15,14 +15,12 @@ const LoginScreen = () => {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <ScrollView contentContainerStyle={{ flexGrow: 1 }} className="bg-amber-400 p-5">
-      {/* Background */}
+    <ScrollView contentContainerStyle={{ flexGrow: 1 }} className="bg-amber-400 pt-8">
       <View className="absolute w-full h-full">
         <View className="h-[40%] bg-amber-400" />
         <View className="h-[60%] bg-black w-[100%] rounded-t-2xl" />
       </View>
 
-      {/* Image Slider */}
       <View className="items-center mb-5">
         <View className="relative w-[320px] h-[240px] rounded-lg overflow-hidden">
           <Image source={{ uri: images[currentSlide].url }} className="w-full h-full" />
@@ -34,7 +32,6 @@ const LoginScreen = () => {
           </TouchableOpacity>
         </View>
 
-        {/* Indicators */}
         <View className="flex-row mt-2 space-x-2">
           {images.map((_, index) => (
             <View key={index} className={`w-2 h-2 rounded-full ${currentSlide === index ? 'bg-white' : 'bg-gray-400'}`} />
@@ -42,9 +39,8 @@ const LoginScreen = () => {
         </View>
       </View>
 
-      {/* Login Form */}
-      <View>
-      <View className="bg-white p-6 rounded-3xl shadow-lg mx-auto w-[90%]">
+      <View className="pt-5 pb-1 py-5">
+      <View className="bg-white p-8 rounded-3xl shadow-lg mx-auto w-[90%]">
         <Text className="text-2xl font-bold text-center mb-5">Login</Text>
 
         <TextInput className="w-full border border-gray-300 rounded-lg p-3 mb-4" placeholder="Email" keyboardType="email-address" />
@@ -60,14 +56,12 @@ const LoginScreen = () => {
 
         <Text className="text-gray-600 text-center my-5">Or Continue With</Text>
 
-        {/* Social Login */}
         <View className="flex-row justify-evenly mb-5">
           <TouchableOpacity className="w-10 h-10 bg-blue-600 rounded-full" />
           <TouchableOpacity className="w-10 h-10 bg-gray-800 rounded-full" />
           <TouchableOpacity className="w-10 h-10 bg-red-600 rounded-full" />
         </View>
 
-        {/* Register Section */}
         <View className="flex-row justify-center">
           <Text className="text-gray-700">Don't have an account?</Text>
           <TouchableOpacity>

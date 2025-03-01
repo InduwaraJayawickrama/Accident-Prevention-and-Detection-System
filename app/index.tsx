@@ -8,6 +8,8 @@ const index = () => {
       text-green-700">index</Text>
       <Link href={'/category'}>Category</Link>
       <Link href={'/products'}>Products</Link>
+      <Link href={'/screens/HomeScreen'}>Home</Link>
+      <Link href={'/screens/Notification'}>Notification</Link>
       <Link href={'/screens/CreateAccountScreen'}>Registration</Link>
       <Link href={'/screens/LoginScreen'}>Login</Link>
     <Link href={{

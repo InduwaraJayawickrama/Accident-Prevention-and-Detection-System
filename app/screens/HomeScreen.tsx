@@ -3,10 +3,10 @@ import { View, Text, ActivityIndicator, TouchableOpacity } from "react-native";
 import MapView, { Marker, Circle } from "react-native-maps";
 import * as Location from "expo-location";
 import moment from "moment";
-import { Home, Coffee, User } from "lucide-react-native"; 
+import { Home, Book, User } from "lucide-react-native"; 
 
 const HomeScreen = () => {
-  const [location, setLocation] = useState(null);
+  const [location, setLocation] = useState<Location.LocationObjectCoords | null>(null);
   const [address, setAddress] = useState("Fetching location...");
   const [currentTime, setCurrentTime] = useState(moment().format("hh:mm A"));
   const [currentDate, setCurrentDate] = useState(moment().format("MMM DD, YYYY"));
@@ -38,27 +38,24 @@ const HomeScreen = () => {
 
   return (
     <View className="flex-1 bg-yellow-400">
-      {/* Header */}
       <View className="px-5 pt-10 pb-3 flex-row justify-between items-center">
         <View>
-          <Text className="text-2xl font-bold text-black">Hi Thilina</Text>
-          <Text className="text-lg text-gray-800">Good morning!</Text>
+          <Text className="text-5xl font-bold text-black">Hi Thilina</Text>
+          <Text className="text-2xl text-gray-800">Good morning!</Text>
         </View>
-        <Text className="text-sm text-gray-700 text-right">{address}</Text>
+        <Text className="text-1xl text-gray-700 text-right">{address}</Text>
       </View>
 
-      {/* Safety Message */}
-      <View className="px-5 mb-3">
-        <Text className="text-lg font-semibold text-black">
-          Drive safe. Save lives. 🚦🚗
+      <View className="px-2 py-3 mb-3">
+        <Text className="text-4xl font-semibold text-black text-center">
+          Drive safe.Save lives.🚦🚗
         </Text>
       </View>
 
-      {/* Map Section */}
-      <View className="flex-1 mx-4 rounded-lg overflow-hidden border border-gray-400">
+      <View className="flex-1 mx-8 my-8 rounded-lg overflow-hidden border border-gray-400">
         {location ? (
           <MapView
-            style={{ width: "100%", height: 300 }}
+            style={{ width: "100%", height: "100%" }}
             initialRegion={{
               latitude: location.latitude,
               longitude: location.longitude,
@@ -66,7 +63,6 @@ const HomeScreen = () => {
               longitudeDelta: 0.02,
             }}
           >
-            {/* Marker for Current Location */}
             <Marker
               coordinate={{
                 latitude: location.latitude,
@@ -74,7 +70,6 @@ const HomeScreen = () => {
               }}
               title="You are here"
             />
-            {/* Circle Around the Location */}
             <Circle
               center={{
                 latitude: location.latitude,
@@ -93,16 +88,14 @@ const HomeScreen = () => {
         )}
       </View>
 
-      {/* Date & Time Section */}
       <View className="flex-row justify-center space-x-2 mt-3">
-        <Text className="px-5 py-2 bg-blue-200 text-gray-800 rounded-lg">{currentDate}</Text>
-        <Text className="px-5 py-2 bg-blue-200 text-gray-800 rounded-lg">{currentTime}</Text>
+        <Text className="px-5 py-5 bg-blue-200 text-gray-800 rounded-lg">{currentDate}</Text>
+        <Text className="px-5 py-5 bg-blue-200 text-gray-800 rounded-lg">{currentTime}</Text>
       </View>
 
-      {/* Bottom Navigation */}
       <View className="flex-row justify-between bg-black p-4 rounded-t-xl mt-3">
         <TouchableOpacity className="items-center">
-          <Coffee size={24} color="white" />
+          <Book size={24} color="white" />
         </TouchableOpacity>
         <TouchableOpacity className="items-center">
           <Home size={24} color="green" />

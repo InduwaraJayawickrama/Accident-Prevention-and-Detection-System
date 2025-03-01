@@ -12,21 +12,32 @@ interface CreateAccountScreenProps {
 
 const CreateAccountScreen = ({ navigation }: CreateAccountScreenProps) => {
   return (
-    <View className="flex-1 justify-center items-center bg-white px-6">
-      <Text className="text-3xl font-bold text-gray-900 mb-6">Create Account</Text>
+    <View className="flex-1 justify-center items-center bg-amber-400">
 
-      <InputField placeholder="Full Name" />
-      <InputField placeholder="Email" />
-      <InputField placeholder="Password" secureTextEntry />
+      <View className="absolute w-full h-full">
+        <View className="h-[40%] bg-amber-400" />
+        <View className="h-[60%] bg-black w-[100%] rounded-t-2xl" />
+      </View>
+      <View className="w-[80%] bg-white py-5 px-2 rounded-3xl">
+        <View className="w-[80%] mx-auto">
+          <Text className="text-3xl text-center font-bold text-gray-900 mb-6">Create Account</Text>
 
-      <CustomButton title="Sign Up" onPress={() => navigation.navigate("Home")} />
+          <InputField placeholder="Full Name" />
+          <InputField placeholder="Email" />
+          <InputField placeholder="Password" secureTextEntry />
+          <InputField placeholder="Confirm Password" secureTextEntry />
 
-      <Text
-        className="text-red-500 mt-4"
-        onPress={() => navigation.navigate("Login")}
-      >
-        Already have an account? Login
-      </Text>
+          <CustomButton title="Sign Up" onPress={() => navigation.navigate("Home")} />
+
+          <Text
+            className="text-red-500 mt-4 text-center"
+            onPress={() => navigation.navigate("Login")}
+          >
+            Already have an account? Login
+          </Text>
+        </View>
+          
+      </View>
     </View>
   );
 };
