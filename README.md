@@ -151,3 +151,103 @@ Communication Modules (Bluetooth, WiFi)
 <img src="https://github.com/Govindv7555/Govindv7555/blob/main/49e76e0596857673c5c80c85b84394c1.gif" width="100%" height="95px">
 
 ## 📊 Project Structure
+
+#### This project aims to develop an intelligent accident detection and prevention system. By leveraging ultrasonic sensors, ESP32 CAM, and other modules, the system will proactively detect pedestrians or obstacles within a suitable range and alert the driver. In case of an accident,it will automatically notify nearby police stations and hospitals with real-time location data
+
+
+##  Project Structure
+
+#include <avr/io.h>
+#include <util/delay.h>
+#include <stdio.h>
+
+// Define the pins for the ultrasonic sensor
+#define trigPin PB0    // Pin 8 on Arduino Uno (PORTB0)
+#define echoPin PD6    // Pin 7 on Arduino Uno (PORTD6)
+
+// Define the pin for the buzzer
+#define buzzerPin PD5   // Pin 6 on Arduino Uno (PORTD5)
+
+// Define the maximum distance to detect an object (in cm)
+#define maxDistance 20
+
+// Function to initialize the serial communication
+void init_serial() {
+    unsigned int ubrr = 103; // For 9600 baud rate with 16 MHz clock
+    UBRR0H = (unsigned char)(ubrr>>8);
+    UBRR0L = (unsigned char)ubrr;
+    UCSR0B = (1<<TXEN0); // Enable transmitter
+    UCSR0C = (1<<UCSZ01) | (1<<UCSZ00); // Set frame format: 8 data bits, 1 stop bit
+}
+
+// Function to send data over serial
+void serial_print(char *str) {
+    while (*str) {
+        while (!(UCSR0A & (1<<UDRE0))) { }
+        UDR0 = *str++;
+    }
+}
+
+// Function to send integer over serial
+void serial_print_int(int value) {
+    char buffer[10];
+    snprintf(buffer, sizeof(buffer), "%d", value);
+    serial_print(buffer);
+}
+
+int main(void) {
+    // Initialize serial communication
+    init_serial();
+
+    // Set the trigger pin as an output
+    DDRB |= (1<<trigPin);
+    
+    // Set the echo pin as an input
+    DDRD &= ~(1<<echoPin);
+    
+    // Set the buzzer pin as an output
+    DDRD |= (1<<buzzerPin);
+
+    long duration, distance;
+
+    while (1) {
+        // Clear the trigger pin
+        PORTB &= ~(1<<trigPin);
+        _delay_us(2);
+
+        // Set the trigger pin high for 10 microseconds
+        PORTB |= (1<<trigPin);
+        _delay_us(10);
+        PORTB &= ~(1<<trigPin);
+
+        // Measure the duration of the pulse from the echo pin
+        while (!(PIND & (1<<echoPin))) { }  // Wait for the rising edge
+        TCNT1 = 0;  // Reset timer
+        TCCR1B |= (1<<CS11);  // Start Timer1 with prescaler 8
+        while (PIND & (1<<echoPin)) { }  // Wait for the falling edge
+        TCCR1B &= ~(1<<CS11);  // Stop Timer1
+        duration = TCNT1;
+
+        // Calculate the distance in cm (speed of sound = 343 m/s)
+        distance = duration * 0.034 / 2;
+
+        // Print the distance to the serial monitor
+        serial_print("Distance: ");
+        serial_print_int(distance);
+        serial_print(" cm\n");
+
+        // Check if the distance is less than or equal to the maximum distance
+        if (distance <= maxDistance) {
+            // Object detected within 20 cm, turn on the buzzer
+            PORTD |= (1<<buzzerPin);
+        } else {
+            // No object detected, turn off the buzzer
+            PORTD &= ~(1<<buzzerPin);
+        }
+
+        // Add a small delay before the next measurement
+        _delay_ms(100);
+    }
+
+    return 0;
+}
