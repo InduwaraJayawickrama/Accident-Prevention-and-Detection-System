@@ -154,6 +154,28 @@ Communication Modules (Bluetooth, WiFi)
 
 #### This project aims to develop an intelligent accident detection and prevention system. By leveraging ultrasonic sensors, ESP32 CAM, and other modules, the system will proactively detect pedestrians or obstacles within a suitable range and alert the driver. In case of an accident,it will automatically notify nearby police stations and hospitals with real-time location data
 
+<img src="https://github.com/Govindv7555/Govindv7555/blob/main/49e76e0596857673c5c80c85b84394c1.gif" width="100%" height="95px">
+
+## Hardware Design
+
+PCB 3D design
+<div align="center">
+  <img src="blob:https://web.whatsapp.com/4f247532-2c08-4787-994f-5c2abfcfe2ab" alt="Description" width="500" height="400">
+</div>
+
+PCB design
+<div align="center">
+  <img src="blob:https://web.whatsapp.com/1f3d0fbe-2353-48ce-b1c4-4457b11187f4" alt="Description" width="500" height="400">
+</div>
+
+Circuit Diagram
+<div align="center">
+  <img src="blob:https://web.whatsapp.com/778cbb74-8791-4fa3-ba17-c68ea1c6d393" alt="Description" width="500" height="400">
+</div>
+
+
+<img src="https://github.com/Govindv7555/Govindv7555/blob/main/49e76e0596857673c5c80c85b84394c1.gif" width="100%" height="95px">
+
 
 ##  Project Code
 
@@ -253,3 +275,4 @@ int main(void) {
 
     return 0;
 }
+```
