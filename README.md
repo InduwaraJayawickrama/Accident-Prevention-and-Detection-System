@@ -160,17 +160,17 @@ Communication Modules (Bluetooth, WiFi)
 
 PCB 3D design
 <div align="center">
-  <img src="blob:https://web.whatsapp.com/4f247532-2c08-4787-994f-5c2abfcfe2ab" alt="Description" width="500" height="400">
+  <img src="https://drive.google.com/file/d/1_ZsxbMd_IcFydJsW25KiCjOwgt70cb-2/view?usp=drive_link" alt="Description" width="500" height="400">
 </div>
 
 PCB design
 <div align="center">
-  <img src="blob:https://web.whatsapp.com/1f3d0fbe-2353-48ce-b1c4-4457b11187f4" alt="Description" width="500" height="400">
+  <img src="https://drive.google.com/file/d/1FaV9SN44xCKVowLdy8oRycF609UDHfQc/view?usp=drive_link" alt="Description" width="500" height="400">
 </div>
 
 Circuit Diagram
 <div align="center">
-  <img src="blob:https://web.whatsapp.com/778cbb74-8791-4fa3-ba17-c68ea1c6d393" alt="Description" width="500" height="400">
+  <img src="https://drive.google.com/file/d/1Ce32Rk3SAGa-9eB1VnOYK6k5puJ41QaC/view?usp=drive_link" alt="Description" width="500" height="400">
 </div>
 
 
