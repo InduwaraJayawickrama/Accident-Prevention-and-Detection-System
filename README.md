@@ -97,17 +97,17 @@ Buzzer
 
 GPS Location Tracker
 <div align="center">
-  <img src="https://files.oaiusercontent.com/file-JLg2vYVNYLVWN7SESh3C7D?se=2025-01-26T15%3A39%3A38Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dbf384e66-9344-4d07-89ce-bfe71d7c799b.webp&sig=b34%2B%2B3YjZL0HnrwdQPsnNDeX%2Bu0UxMc1B52yvPtTSd0%3D" alt="Description" width="500" height="300">
+  <img src="https://th.bing.com/th/id/R.7c35e995b694b2d6041133247dfdab44?rik=ddgy3RKSdQuFNQ&riu=http%3a%2f%2fwww.circuit.pk%2fstorage%2fapp%2fpublic%2fproduct_images%2feVE7XLTCHHuDni1eSSFl0EEbBHzPQclGMXJ6ccbN.jpeg&ehk=4y5SbIsLjs1SWw%2bOz3AOMoEIyPK9ZE7zX2ncpdRERy8%3d&risl=&pid=ImgRaw&r=0" alt="Description" width="500" height="300">
 </div>
 
 Accelerometer
 <div align="center">
-  <img src="https://files.oaiusercontent.com/file-48wBigM72mkStiXaNXnDnp?se=2025-01-26T15%3A41%3A50Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dabe3adf9-b314-481e-a24a-950dbb78698d.webp&sig=cG1cnqg6OB/juoRJxNlsMlW6spQDxd6HGll4HNe/KYY%3D" alt="Description" width="500" height="300">
+  <img src="https://miro.medium.com/max/1940/1*t3MD_4v6ZT9hxTzn__mk8Q.jpeg" alt="Description" width="500" height="300">
 </div>
 
 Communication Modules (Bluetooth, WiFi)
 <div align="center">
-  <img src="https://files.oaiusercontent.com/file-XL1z4jotJW7EN5iPPhpxc8?se=2025-01-26T15%3A42%3A05Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D67d0185f-2672-44b5-869e-0b7f5c0ebd5f.webp&sig=G41FVPVhXJsDYLiZt/5GFrSuDRHb3nxc9psorLWqSi4%3D" alt="Description" width="500" height="300">
+  <img src="https://media.ncd.io/sites/2/20200910153247/ESP32_2-1536x1023.png" alt="Description" width="500" height="300">
 </div>
 
 
