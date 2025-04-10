@@ -1,0 +1,314 @@
+#include <Wire.h>
+#include <SPI.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+#include <MPU6050_tockn.h>
+#include <HardwareSerial.h>
+#include <TinyGPSPlus.h>
+#include <WiFi.h>
+#include <Firebase_ESP_Client.h>
+
+// Include Firebase token helper and RTDB helper
+#include "addons/TokenHelper.h"
+#include "addons/RTDBHelper.h"
+
+// OLED display size
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+
+// SPI Pins for OLED
+#define OLED_MOSI   23
+#define OLED_CLK    18
+#define OLED_DC     5
+#define OLED_CS     15
+#define OLED_RESET  4
+
+// Ultrasonic Sensor
+#define TRIG_PIN 13
+#define ECHO_PIN 12
+
+// Buzzer
+#define BUZZER_PIN 14
+
+// Fire Sensor
+#define FIRE_SENSOR_PIN 32
+
+// Phone number for alert
+#define ALERT_PHONE_NUMBER "+94705820044"
+
+// WiFi credentials
+#define WIFI_SSID "FOE-Student"
+#define WIFI_PASSWORD "abcd1234"
+
+// Firebase project settings
+#define API_KEY "AIzaSyCQN1puM2Ny15YKu7DFREURCQXtQDe6cB4"
+#define DATABASE_URL "https://accident-detection-syste-ccc2c-default-rtdb.asia-southeast1.firebasedatabase.app"
+
+// OLED Display
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &SPI, OLED_DC, OLED_RESET, OLED_CS);
+
+// MPU6050 Gyroscope
+MPU6050 mpu(Wire);
+
+// SIM800L GSM
+HardwareSerial sim800l(1);  // RX=16, TX=17
+
+// GPS Module
+HardwareSerial gpsSerial(2);  // RX=26, TX=27
+TinyGPSPlus gps;
+
+// Firebase objects
+FirebaseData fbdo;
+FirebaseAuth auth;
+FirebaseConfig config;
+
+// Flags
+bool smsSent = false;
+bool callMade = false;
+
+// Timer for Firebase updates
+unsigned long lastFirebaseUpdate = 0;
+const long firebaseInterval = 30000;  // Update Firebase every 30 seconds
+
+// Get distance from Ultrasonic
+float getDistance() {
+  digitalWrite(TRIG_PIN, LOW); 
+  delayMicroseconds(2);
+  digitalWrite(TRIG_PIN, HIGH); 
+  delayMicroseconds(10);
+  digitalWrite(TRIG_PIN, LOW);
+  long duration = pulseIn(ECHO_PIN, HIGH);
+  return duration * 0.034 / 2;
+}
+
+// Get tilt angle from MPU6050
+float getTiltAngle() {
+  mpu.update();
+  return abs(mpu.getAngleX());
+}
+
+// Check fire sensor
+bool isFireDetected() {
+  int fireStatus = digitalRead(FIRE_SENSOR_PIN);
+  Serial.print("Fire Sensor (DO) State: ");
+  Serial.println(fireStatus);
+  return fireStatus == LOW;
+}
+
+// Get current GPS location as string
+String getLocationString() {
+  String loc = "";
+  if (gps.location.isValid()) {
+    loc += "Location: ";
+    loc += String(gps.location.lat(), 6);
+    loc += ", ";
+    loc += String(gps.location.lng(), 6);
+  } else {
+    loc = "Location: Not Available";
+  }
+  return loc;
+}
+
+// Send SMS alert
+void sendSMSAlert(String message) {
+  Serial.println("Sending SMS Alert...");
+  sim800l.println("AT+CMGF=1");
+  delay(100);
+  sim800l.print("AT+CMGS=\"");
+  sim800l.print(ALERT_PHONE_NUMBER);
+  sim800l.println("\"");
+  delay(100);
+  sim800l.println(message);
+  sim800l.write(26);  // Ctrl+Z
+  delay(5000);
+}
+
+// Make a phone call
+void makeCall() {
+  Serial.println("Making Call Alert...");
+  sim800l.print("ATD");
+  sim800l.print(ALERT_PHONE_NUMBER);
+  sim800l.println(";");
+  delay(10000); // Ring 10 sec
+  sim800l.println("ATH"); // Hang up
+}
+
+// Send GPS data to Firebase
+void updateLocationToFirebase() {
+  if (Firebase.ready() && gps.location.isValid()) {
+    // Create a JSON object for GPS data
+    FirebaseJson json;
+    json.set("latitude", gps.location.lat());
+    json.set("longitude", gps.location.lng());
+    
+    // Current timestamp as node name
+    String nodePath = "/gps_data/" + String(millis());
+    
+    // Send data to Firebase
+    if (Firebase.RTDB.setJSON(&fbdo, nodePath.c_str(), &json)) {
+      Serial.println("GPS location sent to Firebase successfully");
+    } else {
+      Serial.println("Failed to send GPS data to Firebase");
+      Serial.println("Reason: " + fbdo.errorReason());
+    }
+  }
+}
+
+void setup() {
+  Serial.begin(115200);
+  Wire.begin();
+
+  // OLED Init
+  if (!display.begin(SSD1306_SWITCHCAPVCC)) {
+    Serial.println("SSD1306 failed");
+    while (true);
+  }
+
+  // Pins setup
+  pinMode(TRIG_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
+  pinMode(BUZZER_PIN, OUTPUT);
+  digitalWrite(BUZZER_PIN, LOW);
+  pinMode(FIRE_SENSOR_PIN, INPUT_PULLUP);
+
+  // MPU6050 Init
+  mpu.begin();
+  mpu.calcGyroOffsets(true);
+  Serial.println("MPU6050 ready");
+
+  // GSM and GPS Init
+  sim800l.begin(9600, SERIAL_8N1, 16, 17);      // SIM800L RX=16, TX=17
+  gpsSerial.begin(9600, SERIAL_8N1, 26, 27);     // GPS RX=26, TX=27
+  Serial.println("SIM800L & GPS ready");
+
+  // WiFi connection
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+  Serial.print("Connecting to WiFi");
+  int attempts = 0;
+  while (WiFi.status() != WL_CONNECTED && attempts < 20) {
+    delay(500);
+    Serial.print(".");
+    attempts++;
+  }
+  
+  if (WiFi.status() == WL_CONNECTED) {
+    Serial.println();
+    Serial.print("Connected with IP: ");
+    Serial.println(WiFi.localIP());
+    
+    // Firebase configuration
+    config.api_key = API_KEY;
+    config.database_url = DATABASE_URL;
+    
+    // Connect to Firebase
+    Firebase.begin(&config, &auth);
+    Firebase.reconnectWiFi(true);
+    Serial.println("Firebase connected");
+  } else {
+    Serial.println();
+    Serial.println("WiFi connection failed");
+  }
+
+  display.clearDisplay();
+}
+
+void loop() {
+  float distance = getDistance();
+  float angle = getTiltAngle();
+  bool fireDetected = isFireDetected();
+
+  // Read GPS data
+  while (gpsSerial.available()) {
+    gps.encode(gpsSerial.read());
+  }
+
+  // Serial debug output
+  Serial.print("Tilt: "); Serial.print(angle);
+  Serial.print("° | Dist: "); Serial.print(distance);
+  Serial.print(" cm | Fire: ");
+  Serial.print(fireDetected ? "YES" : "NO");
+
+  if (gps.location.isValid()) {
+    Serial.print(" | GPS: ");
+    Serial.print(gps.location.lat(), 6);
+    Serial.print(", ");
+    Serial.println(gps.location.lng(), 6);
+  } else {
+    Serial.println(" | GPS: Not Available");
+  }
+
+  // Update Firebase with GPS data periodically
+  unsigned long currentMillis = millis();
+  if (currentMillis - lastFirebaseUpdate >= firebaseInterval) {
+    lastFirebaseUpdate = currentMillis;
+    updateLocationToFirebase();
+  }
+
+  // OLED display
+  display.clearDisplay();
+  display.setTextSize(2);
+  display.setTextColor(SSD1306_WHITE);
+  display.setCursor(10, 10);
+
+  if (fireDetected) {
+    display.print("FIRE ALERT!");
+    digitalWrite(BUZZER_PIN, HIGH);
+
+    if (!smsSent) {
+      String msg = "🔥 Fire Detected!\n" + getLocationString();
+      sendSMSAlert(msg);
+      smsSent = true;
+    }
+    if (!callMade) {
+      makeCall();
+      callMade = true;
+    }
+  } 
+  else if (distance > 0 && distance <= 20) {
+    display.print("Careful!");
+    display.setCursor(10, 30);
+    display.print("Object Close");
+    digitalWrite(BUZZER_PIN, HIGH);
+  } 
+  else if (distance > 20 && distance <= 30) {
+    display.print("Object");
+    display.setCursor(10, 30);
+    display.print("Detected");
+    digitalWrite(BUZZER_PIN, LOW);
+  } 
+  else {
+    display.print("Safe Zone");
+    digitalWrite(BUZZER_PIN, LOW);
+  }
+
+  if (angle >= 30) {
+    display.setCursor(10, 50);
+    display.setTextSize(1);
+    display.print("Angle: ");
+    display.print(angle);
+    display.print(" deg");
+  }
+
+  display.display();
+
+  // Tilt alert with GPS
+  if (angle >= 45 && !fireDetected) {
+    if (!smsSent) {
+      String msg = "⚠ High Tilt Detected!\n" + getLocationString();
+      sendSMSAlert(msg);
+      smsSent = true;
+    }
+    if (!callMade) {
+      makeCall();
+      callMade = true;
+    }
+  }
+
+  // Reset flags when safe
+  if (!fireDetected && angle < 15) {
+    smsSent = false;
+    callMade = false;
+  }
+
+  delay(500);
+}
