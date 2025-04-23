@@ -19,22 +19,22 @@
 
 - JAYAWICKRAMA T.J.I.A.
 <div align="center">
-  <img src="https://media.licdn.com/dms/image/v2/C4D03AQE-Idc2y6NCGw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1646676294832?e=1743638400&v=beta&t=U7PNIvnVF5dIrPkljk4xH7V44VKhp3fzNPcG2F51a2w" alt="Description" width="500" height="500">
+  <img src="https://media.licdn.com/dms/image/v2/C4D03AQE-Idc2y6NCGw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1646676294832?e=1750896000&v=beta&t=v8Y1Sr_ljde1Qv_rQC_Qc983eg7HHrR29G7PFPj_cC0" alt="Description" width="500" height="500">
 </div>
 
 - GAJANAYAKA P.A.G.T.M.L.
 <div align="center">
-  <img src="https://media.licdn.com/dms/image/v2/D5603AQGLtY4QHcn1Lw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1721916460708?e=1743638400&v=beta&t=aUltMhEofAV9Mhmo4qghLUouBc2uK6pzBCLXcNPRFw0" alt="Description" width="500" height="500">
+  <img src="https://media.licdn.com/dms/image/v2/D5603AQGLtY4QHcn1Lw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1721916460708?e=1750896000&v=beta&t=Js5-sG21iSqz5FHvmoLtUUfg3cdRyewED2CX4xSo6gE" alt="Description" width="500" height="500">
 </div>
 
 - MADUSANKA M.L.
 <div align="center">
-  <img src="https://media.licdn.com/dms/image/v2/D4D03AQEGSgIKc-DBpg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1722246773796?e=1743638400&v=beta&t=99ZDDrQHlZ6dEP0Q_fEOV5o3FY0ueTVU0NJAJA6BXCs" alt="Description" width="500" height="500">
+  <img src="https://media.licdn.com/dms/image/v2/D4D03AQEGSgIKc-DBpg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1722246773796?e=1750896000&v=beta&t=MdA4HA-e2nvH1cCWfLuecf8-VpaAcqGW5mC7fK1qi98" alt="Description" width="500" height="500">
 </div>
 
 - ANANDA M.M.H.R.
 <div align="center">
-  <img src="https://media.licdn.com/dms/image/v2/D4D03AQEUL2ndM2VOlQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1701319300846?e=1743638400&v=beta&t=HbmyxYqwaFQ6TwpndW1jJVwc-G2oJUQs8MWrQslerAE" alt="Description" width="500" height="500">
+  <img src="https://media.licdn.com/dms/image/v2/D4D03AQEUL2ndM2VOlQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1701319300847?e=1750896000&v=beta&t=J1QqxxlUyaUtv1LZl6dhDYCv_VaDeXrSxzal_Mbe97M" alt="Description" width="500" height="500">
 </div>
 
 
@@ -173,6 +173,27 @@ Circuit Diagram
   <img src="https://drive.google.com/file/d/1Ce32Rk3SAGa-9eB1VnOYK6k5puJ41QaC/view?usp=drive_link" alt="Description" width="500" height="400">
 </div>
 
+
+<img src="https://github.com/Govindv7555/Govindv7555/blob/main/49e76e0596857673c5c80c85b84394c1.gif" width="100%" height="95px">
+
+
+## Final Design
+
+<img src="https://github.com/Govindv7555/Govindv7555/blob/main/49e76e0596857673c5c80c85b84394c1.gif" width="100%" height="95px">
+# Hardware Design
+<img src="https://media.licdn.com/dms/image/v2/D562DAQE-EAtqZ5oL7A/profile-treasury-image-shrink_1280_1280/B56ZYoh4E5HQAQ-/0/1744436696878?e=1746003600&v=beta&t=PWJsAt_4_-vb6dLsyWGicnIz6JvpKwP3iJkdBvQ1q1U" width="100%" height="100%">
+
+<img src="https://github.com/Govindv7555/Govindv7555/blob/main/49e76e0596857673c5c80c85b84394c1.gif" width="100%" height="95px">
+# Post-Accident Detection - Angle display
+<img src="https://media.licdn.com/dms/image/v2/D562DAQE5c1BtCqqAoA/profile-treasury-image-shrink_800_800/B56ZYojqG_HoAc-/0/1744437160887?e=1746003600&v=beta&t=9U1bRQxv_Yo2OewOg_NT8PL_LgaUy8D_cI_E_4K_Ee4" width="100%" height="100%">
+
+<img src="https://github.com/Govindv7555/Govindv7555/blob/main/49e76e0596857673c5c80c85b84394c1.gif" width="100%" height="95px">
+# Accident Location Navigate
+<img src="https://media.licdn.com/dms/image/v2/D562DAQFHBn015HWp3Q/profile-treasury-image-shrink_800_800/B56ZYoiKSfHoAc-/0/1744436767177?e=1746003600&v=beta&t=0hRX44764zUyHi_1J_ZOzBeSs3t6KDe06gZhrq5KtU8" width="100%" height="100%">
+
+<img src="https://github.com/Govindv7555/Govindv7555/blob/main/49e76e0596857673c5c80c85b84394c1.gif" width="100%" height="95px">
+# My location to Accident location distance
+<img src="https://media.licdn.com/dms/image/v2/D562DAQEAaOo2W-Y9wA/profile-treasury-image-shrink_800_800/B56ZYojfzKGUAc-/0/1744437117781?e=1746003600&v=beta&t=zbqlTm6Fw8GMeQZwOt6Wt4Y30fPX1FjwRl22g8wUSdA" width="100%" height="100%">
 
 <img src="https://github.com/Govindv7555/Govindv7555/blob/main/49e76e0596857673c5c80c85b84394c1.gif" width="100%" height="95px">
 
@@ -346,4 +367,6 @@ void app_main() {
 
         vTaskDelay(500 / portTICK_PERIOD_MS);
     }
-}
+} ```
+
+
