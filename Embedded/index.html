@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accident Detection System - Sri Lanka</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <img src="F:\eng\SEM 06\EC6020 EMBEDDED SYSTEMS DESIGN\New folder (2)\Embedded\Black and White  X Letter Digital Company Logo.jpg" alt="App Logo" class="navbar-brand" style="height: 40px;">
+            <a class="navbar-brand" href="#">Accident Detection System</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <div class="d-flex align-items-center text-white">
+                            <span id="ownerName">DrivesafeX</span>
+                            <span class="ms-2 badge bg-light text-primary" id="ownerLocation">Location</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div id="alertsContainer"></div>
+        
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">Accident Locations Map</h5>
+                        <div>
+                            <button id="trackingButton" class="btn btn-outline-primary btn-sm">
+                                <i class="far fa-location-arrow"></i> Track Me
+                            </button>
+                            <button id="soundToggle" class="btn btn-sm ms-2" title="Toggle sound alerts">
+                                <i class="fas fa-volume-up"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="map" style="height: 500px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">Your Location</h5>
+                        <div>
+                            <span id="locationStatus" class="me-2"><span class="text-warning">⋯ Connecting</span></span>
+                            <button id="refreshLocation" class="btn btn-outline-secondary btn-sm" title="Refresh location">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="location-display">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="mb-1"><strong>Latitude</strong></p>
+                                    <p class="coordinate" id="currentLat">Loading...</p>
+                                </div>
+                                <div class="col-6">
+                                    <p class="mb-1"><strong>Longitude</strong></p>
+                                    <p class="coordinate" id="currentLng">Loading...</p>
+                                </div>
+                            </div>
+                            <div class="location-meta mt-2">
+                                <small class="text-muted">
+                                    Accuracy: <span id="locationAccuracy">Unknown</span> • 
+                                    Updated: <span id="lastUpdated">Never</span>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">Recent Accidents</h5>
+                        <span class="badge bg-danger" id="accidentCounter">0</span>
+                    </div>
+                    <div class="card-body p-0">
+                        <div id="accidentList" class="accident-list">
+                            <!-- Accidents will be added here by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast notifications -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="notificationToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <i class="fas fa-exclamation-triangle text-danger me-2"></i>
+                <strong class="me-auto">Accident Alert</strong>
+                <small class="text-muted">Just now</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="toastMessage">
+                New accident detected!
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert sound -->
+    <audio id="alertSound" preload="auto">
+        <source src="https://cdn.jsdelivr.net/gh/rafaelreis-hotmart/Audio-Sample-files/Sample-alert.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
